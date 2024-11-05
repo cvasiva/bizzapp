@@ -242,6 +242,8 @@ const VoucherPage = ({
           setSubCategoryIndex(0);
           setModalVisible2(true);
           // setPage(0);
+        } else {
+          setModalVisible2(true);
         }
       }
     }

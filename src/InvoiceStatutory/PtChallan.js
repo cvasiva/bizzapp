@@ -1,6 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  ScrollView,
+  Image,
+} from 'react-native';
 
 const PtChallan = ({invoice_data}) => {
   const ptChallan = invoice_data?.professional_tax_challan || {};
@@ -20,15 +27,12 @@ const PtChallan = ({invoice_data}) => {
       <View style={styles.container}>
         <View style={styles.headerContainer} />
         <View style={styles.contentContainer}>
-          <View style={styles.logoContainer}>
-            <View style={styles.emptySpace} />
-            {/* <Image
-            source={require('../../../../assets/images/karnataka_logo.png')}
-            style={styles.logo}
-          /> */}
-          </View>
-
           <View style={styles.titleContainer}>
+            <Image
+              source={require('../Images/chalanRN.png')}
+              resizeMode="contain"
+              style={styles.logo}
+            />
             <Text style={styles.titleText}>Form 152</Text>
             <Text style={styles.titleText}>See Rule 50(a)(1)</Text>
             <Text style={styles.titleText}>CHALLAN</Text>
@@ -136,7 +140,9 @@ const PtChallan = ({invoice_data}) => {
           </View>
 
           <View style={styles.row}>
-            <Text style={styles.titleText}>Signature of remitter/depositor</Text>
+            <Text style={styles.titleText}>
+              Signature of remitter/depositor
+            </Text>
           </View>
 
           <View style={styles.footerContainer}>
@@ -156,7 +162,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: '#fff',
-    width:600,
+    width: 600,
   },
   headerContainer: {
     marginBottom: 10,
@@ -173,6 +179,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     resizeMode: 'contain',
+    width: 50,
+    height: 50,
   },
   titleContainer: {
     alignItems: 'center',
@@ -181,7 +189,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 16,
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   sectionContainer: {
     marginBottom: 10,
@@ -204,7 +212,7 @@ const styles = StyleSheet.create({
   },
   bold: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   tableContainer: {
     borderWidth: 1,
@@ -222,7 +230,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontWeight: 'bold',
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   accountDetailRow: {
     flexDirection: 'row',
@@ -233,11 +241,11 @@ const styles = StyleSheet.create({
   accountDetailCell: {
     flex: 1,
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   rightAlign: {
     textAlign: 'right',
-    color:'#808080',
+    color: '#808080',
   },
   totalRow: {
     flexDirection: 'row',
@@ -251,7 +259,7 @@ const styles = StyleSheet.create({
   footerText: {
     textAlign: 'right',
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
 });
 

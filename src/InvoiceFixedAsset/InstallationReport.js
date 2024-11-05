@@ -8,8 +8,8 @@ const InstallationReport = ({invoice_data}) => {
   const invoice = invoice_data?.invoice || {};
   const po = invoice_data?.po || {};
 
-  const trimmedLogoUrl =
-    invoice.company && invoice.company.logo ? invoice.company.logo.trim() : '';
+  // const trimmedLogoUrl =
+  //   invoice.company && invoice.company.logo ? invoice.company.logo.trim() : '';
 
   const companyName = po.company?.companyname || '';
   const companyAddress = invoice.company
@@ -24,9 +24,8 @@ const InstallationReport = ({invoice_data}) => {
         <View style={styles.header}>
           {invoice.company && invoice.company.logo ? (
             <Image
-              source={{
-                uri: `https://skillcdn.storage.googleapis.com/${trimmedLogoUrl}`,
-              }}
+              source={require('../Images/nisha_steel_n_alloys.png')}
+              resizeMode="contain"
               style={styles.logo}
             />
           ) : null}
@@ -82,9 +81,7 @@ const InstallationReport = ({invoice_data}) => {
             <View style={styles.detailsColumn}>
               <Text style={styles.detailsLabel}>Invoice Date</Text>
               <Text style={styles.detailsValue}>
-                {invoice.invoice_date
-                  ? `${invoice.invoice_date}`
-                  : '-'}
+                {invoice.invoice_date ? `${invoice.invoice_date}` : '-'}
               </Text>
             </View>
           </View>
@@ -149,8 +146,9 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 50,
+    height: 50,
+    margin:10,
   },
   companyInfo: {
     flex: 1,

@@ -21,9 +21,8 @@ const AdvancePayments = ({invoice_data}) => {
       <View style={styles.headerContainer}>
         <View style={styles.logoContainer}>
           <Image
-            source={{
-              uri: `https://skillcdn.storage.googleapis.com/${invoice.company.logo}`,
-            }}
+            source={require('../Images/nisha_steel_n_alloys.png')}
+            resizeMode="contain"
             style={styles.logo}
           />
         </View>
@@ -178,8 +177,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 50,
+    height: 50,
   },
   companyInfo: {
     width: '70%',

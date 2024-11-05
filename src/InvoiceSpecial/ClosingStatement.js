@@ -93,10 +93,14 @@ const styles = StyleSheet.create({
   headerText:{
     color:'#808080',
     fontWeight: 'bold',
+    flex:1,
+    textAlign:'center',
+    fontSize:12,
   },
   container: {
     flex: 1,
     backgroundColor: '#F5F5F5',
+    width:600,
   },
   header: {
     flexDirection: 'row',
@@ -128,12 +132,13 @@ const styles = StyleSheet.create({
   },
   tableContainer: {
     marginVertical: 10,
-    width: 600,
+    width: '100%',
   },
   tableHeader: {
     flexDirection: 'row',
     backgroundColor: '#E8F7FE',
-    padding: 10,
+    padding: 5,
+    width: 600,
   },
   tableRow: {
     flexDirection: 'row',
@@ -142,8 +147,8 @@ const styles = StyleSheet.create({
   },
   cellText: {
     flex: 1,
-    textAlign: 'center',
-    fontSize: 14,
+    textAlign: 'left',
+    fontSize: 12,
     color:'#808080',
   },
   totalRow: {

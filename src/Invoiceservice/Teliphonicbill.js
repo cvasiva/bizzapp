@@ -24,12 +24,12 @@ const TeliphonicBill = ({invoice_data}) => {
               </View>
               <View style={styles.detailsContainer}>
                 <View style={styles.row}>
-                  <View style={styles.labelContainer}>
+                  <View>
                     <Text style={styles.label}>Bill Number:</Text>
                     <Text style={styles.label}>Bill Date:</Text>
                     <Text style={styles.label}>Bill Period:</Text>
                   </View>
-                  <View style={styles.valueContainer}>
+                  <View>
                     <Text style={styles.value}>{invoice.invoice_no}</Text>
                     <Text style={styles.value}>{invoice.invoice_date}</Text>
                     <Text style={styles.value}>
@@ -41,7 +41,7 @@ const TeliphonicBill = ({invoice_data}) => {
                   </View>
                 </View>
                 <View style={styles.row}>
-                  <View style={styles.labelContainer}>
+                  <View>
                     <Text style={styles.label}>
                       {invoice.bill_to.companyname}
                     </Text>
@@ -208,6 +208,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: 'red',
     paddingVertical: 10,
+    gap:20,
   },
   labelContainer: {
     flex: 1,

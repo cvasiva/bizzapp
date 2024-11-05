@@ -4,7 +4,7 @@
 /* eslint-disable radix */
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, FlatList, ScrollView, Image} from 'react-native';
 
 function GSTPaymentChallan({invoice_data}) {
   const a = [
@@ -84,7 +84,11 @@ function GSTPaymentChallan({invoice_data}) {
       <View style={styles.allBillCompany}>
         <View style={styles.gstChallan}>
           <View style={styles.logoContainer}>
-            {/* <Image source={Logo} style={styles.logo} /> */}
+            <Image
+              source={require('../Images/chalanRN.png')}
+              resizeMode="contain"
+              style={styles.logo}
+            />
           </View>
           <Text style={styles.billTitle}>GOODS AND SERVICES TAX</Text>
           <Text style={styles.billTitle}>PAYMENT RECEIPT</Text>
@@ -96,7 +100,9 @@ function GSTPaymentChallan({invoice_data}) {
             <View style={styles.separator} />
             <Text style={styles.fontcolor}>Payment Particulars</Text>
             <View style={styles.separator} />
-            <Text style={styles.fontcolor}>CIN: {challan.payment_particulars.cin}</Text>
+            <Text style={styles.fontcolor}>
+              CIN: {challan.payment_particulars.cin}
+            </Text>
             <Text style={styles.bankName}>
               Name of Bank: {challan.payment_particulars.name_of_bank}
             </Text>
@@ -106,9 +112,13 @@ function GSTPaymentChallan({invoice_data}) {
             <View style={styles.separator} />
             <Text style={styles.fontcolor}>Details of Taxpayer</Text>
             <View style={styles.separator} />
-            <Text style={styles.fontcolor}>GSTIN: {challan.details_of_taxpayer.gstin}</Text>
+            <Text style={styles.fontcolor}>
+              GSTIN: {challan.details_of_taxpayer.gstin}
+            </Text>
             <View style={styles.separator} />
-            <Text style={styles.fontcolor}>Name: {challan.details_of_taxpayer.name}</Text>
+            <Text style={styles.fontcolor}>
+              Name: {challan.details_of_taxpayer.name}
+            </Text>
             <View style={styles.address}>
               <Text style={styles.fontcolor}>Address:</Text>
               <Text style={styles.fontcolor}>
@@ -182,14 +192,14 @@ function GSTPaymentChallan({invoice_data}) {
 }
 
 const styles = StyleSheet.create({
-  fontcolor:{
-    color:'#808080',
+  fontcolor: {
+    color: '#808080',
   },
   container: {
     flex: 1,
     padding: 10,
     backgroundColor: '#fff',
-    width:600,
+    width: 600,
   },
   billHeader: {
     marginBottom: 5,
@@ -205,15 +215,15 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   logo: {
-    // width: 100,
-    // height: 100,
+    width: 50,
+    height: 50,
     resizeMode: 'contain',
   },
   billTitle: {
     fontWeight: 'bold',
     fontSize: 18,
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
     // marginVertical: 5,
   },
   billDetails: {
@@ -222,76 +232,76 @@ const styles = StyleSheet.create({
   depositDate: {
     textAlign: 'right',
     marginBottom: 5,
-    color:'#808080',
+    color: '#808080',
   },
   bankName: {
     marginLeft: 20,
-    color:'#808080',
+    color: '#808080',
   },
   brn: {
     textAlign: 'right',
     marginBottom: 5,
-    color:'#808080',
+    color: '#808080',
   },
   address: {
     marginBottom: 10,
-    color:'#808080',
+    color: '#808080',
   },
   separator: {
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
     marginVertical: 5,
-    color:'#808080',
+    color: '#808080',
   },
   table: {
     marginVertical: 10,
-    color:'#808080',
+    color: '#808080',
   },
   tableHeader: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 5,
-    color:'#808080',
+    color: '#808080',
   },
   tableHeaderRow: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 5,
-    color:'#808080',
+    color: '#808080',
   },
   tableRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 5,
-    color:'#808080',
+    color: '#808080',
   },
   tableCell: {
     flex: 1,
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   totalLabel: {
     flex: 1,
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   totalValue: {
     flex: 1,
     textAlign: 'right',
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   bankInfo: {
     marginVertical: 10,
-    color:'#808080',
+    color: '#808080',
   },
   notes: {
     marginVertical: 10,
-    color:'#808080',
+    color: '#808080',
   },
   billFooter: {
     marginTop: 20,
-    color:'#808080',
+    color: '#808080',
   },
 });
 

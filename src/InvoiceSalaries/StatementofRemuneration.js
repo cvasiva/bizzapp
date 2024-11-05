@@ -12,17 +12,14 @@ const StatementofRemuneration = ({invoice_data}) => {
     <ScrollView style={styles.container}>
       <View style={styles.row}>
         <View style={styles.logoContainer}>
-          {invoice_data.logo && (
-            <Image
-              source={{
-                uri: `https://skillcdn.storage.googleapis.com/${invoice_data.logo}`,
-              }}
-              style={styles.logo}
-            />
-          )}
+          <Image
+            source={require('../Images/nisha_steel_n_alloys.png')}
+            resizeMode="contain"
+            style={styles.logo}
+          />
         </View>
         <View style={styles.companyInfo}>
-          <Text  style={styles.label}>{company_data.companyname || ''}</Text>
+          <Text style={styles.label}>{company_data.companyname || ''}</Text>
           <Text style={styles.labelfont}>{`${company_data.address1 || ''} ${
             company_data.address2 || ''
           } ${company_data.city || ''} ${company_data.pin || ''}, ${
@@ -44,11 +41,11 @@ const StatementofRemuneration = ({invoice_data}) => {
         <Text style={styles.title}>Statement of Remuneration</Text>
       </View>
       <View style={styles.infoRow}>
-        <Text  style={styles.label}>
+        <Text style={styles.label}>
           Month :{' '}
           {moment(invoice_data.ref_date, 'DD/MM/YYYY').format('MMMM, YYYY')}
         </Text>
-        <Text  style={styles.label}>
+        <Text style={styles.label}>
           Total Employees : {employee_salaries && employee_salaries.length}
         </Text>
       </View>
@@ -223,8 +220,8 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   logo: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
   },
   companyInfo: {
     flex: 6,
@@ -239,7 +236,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   titleRow: {
     alignItems: 'center',
@@ -248,17 +245,20 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   infoRow: {
     alignItems: 'center',
     marginVertical: 10,
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'space-around',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
   table: {
     marginVertical: 10,
+    borderWidth: 1,
+    borderColor: '#000',
+    padding:10,
   },
   tableHeader: {
     flexDirection: 'row',
@@ -278,11 +278,11 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   text: {
     marginBottom: 5,
-    color:'#808080',
+    color: '#808080',
   },
   textRes11: {
     marginBottom: 5,
@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
   amount: {
     textAlign: 'right',
     marginBottom: 5,
-    color:'#808080',
+    color: '#808080',
   },
   total: {
     textAlign: 'right',
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: 'black',
     paddingRight: 10,
-    color:'#808080',
+    color: '#808080',
   },
   deductions: {
     paddingLeft: 10,
@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
   deductionsText: {
     textAlign: 'right',
     marginBottom: 5,
-    color:'#808080',
+    color: '#808080',
   },
   netSalaryRow: {
     flexDirection: 'row',
@@ -318,13 +318,13 @@ const styles = StyleSheet.create({
     flex: 9,
     textAlign: 'center',
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   netSalaryAmount: {
     flex: 3,
     textAlign: 'right',
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
 });
 

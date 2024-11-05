@@ -10,7 +10,7 @@ import moment from 'moment';
 const DividendPayments = ({invoice_data}) => {
   const templateData = invoice_data;
   const company = templateData.usercompany;
-  const folio_date = templateData.vocher_date;
+  const folio_date = templateData.company_share.date;
 
   const renderCompany = templateData => {
     return (
@@ -19,9 +19,8 @@ const DividendPayments = ({invoice_data}) => {
           <View style={styles.companyInfo}>
             <View style={styles.logoContainer}>
               <Image
-                source={{
-                  uri: `https://skillcdn.storage.googleapis.com/${company.logo}`,
-                }}
+                source={require('../Images/nisha_steel_n_alloys.png')}
+                resizeMode="contain"
                 style={styles.logo}
               />
             </View>
@@ -121,10 +120,15 @@ const styles = StyleSheet.create({
     width: '11%',
   },
   companyInfo: {
+    display:'flex',
     flexDirection: 'row',
     backgroundColor: 'rgb(76 169 242 / 46%)',
     borderColor: '#6c757d',
+    justifyContent: 'center',
+    alignItems:'center',
+    textAlign:'center',
     borderWidth: 1,
+    paddingLeft:30,
     paddingVertical: 8,
     marginTop: 8,
   },
@@ -134,9 +138,10 @@ const styles = StyleSheet.create({
     marginLeft: -16,
   },
   logo: {
-    width: '100%',
-    height: '100%',
+    width: 40,
+    height: 40,
     resizeMode: 'contain',
+    marginLeft: 20,
   },
   companyDetails: {
     flex: 1,

@@ -2,13 +2,12 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 const StartingPage = ({navigation}) => {
+  const image = require('../Images/maxresdefault.png');
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image
-          source={require('../Images/maxresdefault.png')}
-          style={styles.image}
-        />
+        <Image source={image} style={styles.image} />
       </View>
       <View style={styles.overlayContainer}>
         <View style={styles.bgCard}>

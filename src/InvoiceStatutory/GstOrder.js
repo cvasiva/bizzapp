@@ -10,9 +10,8 @@ export default function GstOrder({invoice_data}) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
-        source={{
-          uri: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Seal_of_Karnataka.svg',
-        }}
+        source={require('../Images/Seal_of_Karnataka.png')}
+        resizeMode="contain"
         style={styles.seal}
       />
       <Text style={styles.header}>Government of Karnataka</Text>
@@ -116,7 +115,9 @@ export default function GstOrder({invoice_data}) {
               {userCompany.companyname || 'N/A'}
             </Text>
           </Text>
-          <Text style={styles.fontcolor}>Designation: Asst Commissioner Commercial Taxes</Text>
+          <Text style={styles.fontcolor}>
+            Designation: Asst Commissioner Commercial Taxes
+          </Text>
           <Text style={styles.fontcolor}>Office Address:</Text>
         </View>
       </View>
@@ -125,8 +126,8 @@ export default function GstOrder({invoice_data}) {
 }
 
 const styles = StyleSheet.create({
-  fontcolor:{
-    color:'#808080',
+  fontcolor: {
+    color: '#808080',
   },
   container: {
     padding: 10,
@@ -135,78 +136,80 @@ const styles = StyleSheet.create({
   seal: {
     alignSelf: 'center',
     marginBottom: 10,
-    color:'#808080',
+    color: '#808080',
+    width: 50,
+    height: 50,
   },
   header: {
     textAlign: 'center',
     fontSize: 16,
-    color:'#808080',
+    color: '#808080',
   },
   subHeader: {
     textAlign: 'center',
     fontSize: 12,
-    color:'#808080',
+    color: '#808080',
   },
   officeAddress: {
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   formNumber: {
     marginTop: 0,
-    color:'#808080',
+    color: '#808080',
   },
   rules: {
     marginTop: 0,
-    color:'#808080',
+    color: '#808080',
   },
   orderDateContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 0,
-    color:'#808080',
+    color: '#808080',
   },
   date: {
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   toText: {
     marginTop: 0,
-    color:'#808080',
+    color: '#808080',
   },
   table: {
     width: '100%',
     marginTop: 0,
-    color:'#808080',
+    color: '#808080',
   },
   tableRow: {
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
     paddingVertical: 4,
-    color:'#808080',
+    color: '#808080',
   },
   tableCell: {
     flex: 1,
     padding: 4,
-    color:'#808080',
+    color: '#808080',
   },
   refundSection: {
     marginTop: 8,
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   greeting: {
     marginTop: 0,
-    color:'#808080',
+    color: '#808080',
   },
   intro: {
     marginTop: 0,
-    color:'#808080',
+    color: '#808080',
   },
   detailsTable: {
     width: '100%',
     marginTop: 8,
-    color:'#808080',
+    color: '#808080',
   },
   detailsTableRow: {
     flexDirection: 'row',
@@ -218,31 +221,31 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 4,
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   order: {
     textAlign: 'center',
     marginTop: 10,
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   orderText: {
     marginTop: 0,
-    color:'#808080',
+    color: '#808080',
   },
   signatureContainer: {
     flexDirection: 'row',
     marginTop: 8,
-    color:'#808080',
+    color: '#808080',
   },
   signatureLeft: {
     flex: 0.6,
-    color:'#808080',
+    color: '#808080',
   },
   signatureRight: {
     flex: 0.4,
     alignItems: 'flex-end',
-    color:'#808080',
+    color: '#808080',
   },
   signatureName: {
     fontSize: 14,

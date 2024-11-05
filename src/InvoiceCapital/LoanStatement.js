@@ -159,6 +159,13 @@ const LoanStatement = ({invoice_data}) => {
       </View>
       <View style={styles.tableContainer}>
         <Text style={styles.tableHeader}>Loan Statement</Text>
+        <View style={[styles.tableRow]}>
+          <Text style={styles.tableCell}>Date</Text>
+          <Text style={styles.tableCell}>Transaction Description</Text>
+          <Text style={styles.tableCell}>Debit</Text>
+          <Text style={styles.tableCell}>Credit</Text>
+          <Text style={styles.tableCell}>Balance</Text>
+        </View>
         <FlatList
           data={transactions}
           keyExtractor={(item, index) => index.toString()}
@@ -266,8 +273,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   header: {
-    backgroundColor:
-      'radial-gradient(84% 84% at 0% 16%, rgb(137, 127, 255) 0%, rgb(82, 67, 255) 100%)',
+    backgroundColor: '#97144d',
     padding: 16,
     flexDirection: 'row',
     alignItems: 'center',
@@ -286,7 +292,7 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 16,
     marginLeft: 16,
-    textAlign:'center',
+    textAlign: 'center',
   },
   detailsContainer: {
     marginTop: 16,
@@ -312,6 +318,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 8,
+    textAlign: 'center',
     color: '#808080',
   },
   tableRow: {

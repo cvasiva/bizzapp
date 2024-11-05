@@ -92,26 +92,30 @@ const Receipt = props => {
           </View>
           <View style={styles.premiumContainer}>
             <Text style={styles.detailsLabel}>PREMIUM DETAILS</Text>
-            <Text style={styles.infoHeader1}>
-              Gross Premium:{' '}
+            <View style={styles.flxgross}>
+              <Text style={styles.infoHeader1}>Gross Premium: </Text>
               <Text style={styles.bold}>
                 {new Intl.NumberFormat('en-IN').format(invoice.subtotal)}
               </Text>
-            </Text>
-            <Text style={styles.infoHeader1}>
-              CGST{invoice.cgst_percentage}%:{' '}
+            </View>
+            <View style={styles.flxgross}>
+              <Text style={styles.infoHeader1}>
+                CGST{invoice.cgst_percentage}%:{' '}
+              </Text>
               <Text style={styles.bold}>{invoice.cgst_total}</Text>
-            </Text>
-            <Text style={styles.infoHeader1}>
-              SGST{invoice.sgst_percentage}%:{' '}
+            </View>
+            <View style={styles.flxgross}>
+              <Text style={styles.infoHeader1}>
+                SGST{invoice.sgst_percentage}%:{' '}
+              </Text>
               <Text style={styles.bold}>{invoice.sgst_total}</Text>
-            </Text>
-            <Text style={styles.infoHeader1}>
-              Total:{' '}
+            </View>
+            <View style={styles.flxgross1}>
+              <Text style={styles.infoHeader1}>Total: </Text>
               <Text style={styles.bold}>
                 {new Intl.NumberFormat('en-IN').format(invoice.total)}
               </Text>
-            </Text>
+            </View>
           </View>
           <Text style={styles.termsConditions}>
             TERM & CONDITIONS: {insurance_invoice.terms_conditions.point_1}
@@ -127,6 +131,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFC8F0',
     color: '#808080',
+  },
+  flxgross: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingRight: 20,
+  },
+  flxgross1: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingRight: 20,
+    borderTopWidth: 1,
+    borderColor: '#bbb',
   },
   buttonContainer: {
     flexDirection: 'row',

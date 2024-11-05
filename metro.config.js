@@ -1,4 +1,5 @@
-const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+/* eslint-disable prettier/prettier */
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 
 /**
  * Metro configuration
@@ -6,6 +7,16 @@ const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
  *
  * @type {import('metro-config').MetroConfig}
  */
-const config = {};
+const config = {
+  resolver: {
+    assetExts: ['png', 'jpg', 'jpeg', 'svg'],
+  },
+};
 
-module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+// Add asset linking for images
+const customConfig = {
+  assets: ['./src/Images/'],
+};
+
+module.exports = mergeConfig(getDefaultConfig(__dirname), config, customConfig);
+

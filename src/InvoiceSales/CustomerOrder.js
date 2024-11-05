@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 /* eslint-disable radix */
 /* eslint-disable prettier/prettier */
 import React from 'react';
@@ -43,9 +45,8 @@ const CustomerOrder = ({invoice_data}) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
-            source={{
-              uri: `https://skillcdn.storage.googleapis.com/${sales_invoice.bill_to.logo}`,
-            }}
+            source={require('../Images/nisha_steel_n_alloys.png')}
+            resizeMode="contain"
             style={styles.logo}
           />
           <View style={styles.address}>
@@ -105,7 +106,9 @@ const CustomerOrder = ({invoice_data}) => {
 
         <View style={styles.amountWords}>
           <Text style={styles.bold}>Total Amount in words: </Text>
-          <Text>{sales_invoice.amount_words}</Text>
+          <Text style={{textAlign: 'right'}}>
+            {sales_invoice.amount_words}
+          </Text>
         </View>
 
         <View style={styles.footer}>
@@ -140,10 +143,10 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 600,
   },
-  bold:{
+  bold: {
     fontWeight: 'bold',
     fontSize: 16,
-    color:'#808080',
+    color: '#808080',
   },
   header: {
     flexDirection: 'row',
@@ -153,9 +156,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   logo: {
-    width: 100,
-    height: 100,
-    marginRight: 10,
+    width: 50,
+    height: 50,
+    margin: 10,
   },
   address: {
     flex: 1,
@@ -163,18 +166,18 @@ const styles = StyleSheet.create({
   companyName: {
     fontWeight: 'bold',
     fontSize: 16,
-    color:'#808080',
+    color: '#808080',
   },
   addressText: {
     fontSize: 14,
-    color:'#808080',
+    color: '#808080',
   },
   details: {
     flex: 1,
   },
   detail: {
     fontSize: 14,
-    color:'#808080',
+    color: '#808080',
   },
   addressContainer: {
     flexDirection: 'row',
@@ -202,7 +205,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontWeight: 'bold',
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   row: {
     flexDirection: 'row',
@@ -213,7 +216,7 @@ const styles = StyleSheet.create({
   cell: {
     flex: 1,
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   totalContainer: {
     flexDirection: 'row',
@@ -224,18 +227,18 @@ const styles = StyleSheet.create({
   totalLabel: {
     fontWeight: 'bold',
     fontSize: 16,
-    color:'#808080',
+    color: '#808080',
   },
   totalAmount: {
     fontWeight: 'bold',
     fontSize: 16,
-    color:'#808080',
+    color: '#808080',
   },
   amountWords: {
     marginTop: 10,
-    color:'#808080',
-    flex:1,
-    flexDirection:'row',
+    color: '#808080',
+    flex: 1,
+    flexDirection: 'column',
   },
   footer: {
     flexDirection: 'row',
@@ -257,7 +260,7 @@ const styles = StyleSheet.create({
   signatureLabel: {
     fontWeight: 'bold',
     fontSize: 12,
-    color:'#808080',
+    color: '#808080',
   },
 });
 

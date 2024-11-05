@@ -19,17 +19,17 @@ import {UserProvider} from './src/Auth/UserContext';
 import IncomeProvider from './src/Auth/IncomeProvider';
 import Accountingflow from './src/Accounting/Accountingflow';
 import Getway from './src/Mpdules/Getway';
-import Orientation from 'react-native-orientation-locker';
+// import Orientation from 'react-native-orientation-locker';
 import VoucherPage from './src/Mpdules/VoucherPage';
 const Stack = createNativeStackNavigator();
 
 function App() {
-  React.useEffect(() => {
-    Orientation.lockToLandscape();
-    return () => {
-      Orientation.unlockAllOrientations();
-    };
-  }, []);
+  // React.useEffect(() => {
+  //   Orientation.lockToLandscape();
+  //   return () => {
+  //     Orientation.unlockAllOrientations();
+  //   };
+  // }, []);
 
   return (
     <UserProvider>
@@ -79,7 +79,7 @@ function App() {
             <Stack.Screen
               name="NewappPage"
               component={NewappPage}
-              // options={{headerShown: false}}
+              options={{headerShown: false}}
             />
           </Stack.Navigator>
         </NavigationContainer>

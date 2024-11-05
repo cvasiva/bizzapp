@@ -44,16 +44,17 @@ const PtStatement = ({invoice_data}) => {
         <View style={styles.contentContainer}>
           <View style={styles.headerRow}>
             <Image
-              source={{
-                uri: `https://skillcdn.storage.googleapis.com/${ptStatement.company_details?.logo}`,
-              }}
+              source={require('../Images/nisha_steel_n_alloys.png')}
+              resizeMode="contain"
               style={styles.logo}
             />
             <View style={styles.companyInfo}>
               <Text style={styles.companyName}>
                 {ptStatement.company_details?.company}
               </Text>
-              <Text style={styles.tableCell}>{ptStatement.company_details?.address}</Text>
+              <Text style={styles.tableCell}>
+                {ptStatement.company_details?.address}
+              </Text>
             </View>
             <View style={styles.statementHeader}>
               <Text style={styles.statementTitle}>Monthly Statement</Text>
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
   companyName: {
     fontSize: 18,
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   statementHeader: {
     backgroundColor: '#f0f0f0',
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   tableContainer: {
     borderWidth: 1,
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontWeight: 'bold',
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   tableRow: {
     flexDirection: 'row',
@@ -165,14 +166,14 @@ const styles = StyleSheet.create({
   tableCell: {
     flex: 1,
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   rightAlign: {
     textAlign: 'right',
   },
   currentRow: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   totalRow: {
     flexDirection: 'row',
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   signatureRow: {
     flexDirection: 'row',
@@ -192,7 +193,7 @@ const styles = StyleSheet.create({
   },
   signatureText: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   footerContainer: {
     marginTop: 20,

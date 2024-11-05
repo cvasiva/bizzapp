@@ -12,14 +12,11 @@ const StatementofSalary = ({invoice_data}) => {
     <ScrollView style={styles.container}>
       <View style={styles.row}>
         <View style={styles.logoContainer}>
-          {invoice_data.logo && (
-            <Image
-              source={{
-                uri: `https://skillcdn.storage.googleapis.com/${invoice_data.logo}`,
-              }}
-              style={styles.logo}
-            />
-          )}
+          <Image
+            source={require('../Images/nisha_steel_n_alloys.png')}
+            resizeMode="contain"
+            style={styles.logo}
+          />
         </View>
         <View style={styles.companyInfo}>
           <Text style={styles.cell}>{company_data.companyname || ''}</Text>
@@ -223,8 +220,8 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   logo: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
   },
   companyInfo: {
     flex: 6,
@@ -252,12 +249,19 @@ const styles = StyleSheet.create({
     color: '#808080',
   },
   infoRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 20,
     alignItems: 'center',
     marginVertical: 10,
   },
   table: {
     marginVertical: 10,
     color: '#808080',
+    borderWidth: 1,
+    borderColor: '#000',
+    padding: 10,
   },
   tableHeader: {
     flexDirection: 'row',

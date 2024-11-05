@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
 
 const PaymentReceipt = ({invoice_data}) => {
   const pf_payment = invoice_data?.pf_payment || {};
@@ -9,7 +9,11 @@ const PaymentReceipt = ({invoice_data}) => {
     <ScrollView>
       <View Style={styles.container}>
         <View style={styles.header}>
-          {/* <Image source={{uri: 'path/to/emp.png'}} style={styles.logo} /> */}
+          <Image
+            source={require('../Images/emp.png')}
+            resizeMode="contain"
+            style={styles.logo}
+          />
           <View style={styles.headerTextContainer}>
             <Text style={styles.headerText}>
               Employee's Provident Fund Organization
@@ -43,30 +47,30 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#fff',
     width: 700,
-    color:'#808080',
+    color: '#808080',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   logo: {
-    width: 80,
+    width: 70,
     height: 70,
     marginRight: 10,
-    color:'#808080',
+    color: '#808080',
   },
   headerTextContainer: {
     justifyContent: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   headerText: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   receiptContainer: {
     paddingHorizontal: 16,
-    color:'#808080',
+    color: '#808080',
   },
   title: {
     textAlign: 'center',
@@ -74,26 +78,26 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     padding: 8,
-    color:'#808080',
+    color: '#808080',
   },
   table: {
     borderWidth: 1,
     borderColor: '#9999ff',
     borderRadius: 4,
     overflow: 'hidden',
-    color:'#808080',
+    color: '#808080',
   },
   row: {
     flexDirection: 'row',
     padding: 8,
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
-    color:'#808080',
+    color: '#808080',
   },
   cell: {
     flex: 1,
     fontSize: 14,
-    color:'#808080',
+    color: '#808080',
   },
 });
 

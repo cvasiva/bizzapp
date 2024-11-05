@@ -10,7 +10,11 @@ import AuthorisedSignature from '../Invoice/AuthorisedSignature';
 const ExportInvoice = props => {
   const {sales_invoice, foreign_currency, data} = props;
   let total_usd = 0;
-
+  sales_invoice.lineItems.forEach(lineItem => {
+    const rate_usd = parseInt(lineItem.rate / 77);
+    const item_amount_usd = lineItem.qty * rate_usd;
+    total_usd += item_amount_usd;
+  });
   const renderItem = ({item, index}) => {
     const rate_usd = parseInt(item.rate / 77);
     const item_amount_usd = item.qty * rate_usd;
@@ -162,7 +166,7 @@ const ExportInvoice = props => {
             <Text style={styles.boldText}>
               IGST {sales_invoice.igst_percentage}%
             </Text>
-            <Text style={styles.tableCell}>
+            <Text style={styles.tableCell12}>
               {foreign_currency
                 ? `$ ${sales_invoice.igst_total.toLocaleString('en-US')}`
                 : sales_invoice.igst_total.toLocaleString('en-IN')}
@@ -173,7 +177,7 @@ const ExportInvoice = props => {
         {sales_invoice.tds_amount > 0 && (
           <View style={styles.summaryRow}>
             <Text style={styles.boldText}>TCS {sales_invoice.tds}%</Text>
-            <Text style={styles.tableCell}>
+            <Text style={styles.tableCell12}>
               {foreign_currency
                 ? `$ ${sales_invoice.tds_amount.toLocaleString('en-US')}`
                 : sales_invoice.tds_amount.toLocaleString('en-IN')}
@@ -307,18 +311,19 @@ const styles = StyleSheet.create({
   },
   tableCell: {
     flex: 1,
-    // textAlign: '',
+    textAlign: 'center',
     color: '#808080',
   },
   tableCell12: {
     flex: 1,
     textAlign: 'right',
     color: '#808080',
+    paddingRight:15,
   },
   summary: {
     marginTop: 10,
-    borderTopWidth: 1,
-    borderColor: '#ddd',
+    // borderTopWidth: 1,
+    // borderColor: '#ddd',
     paddingTop: 10,
   },
   summaryRow: {
@@ -354,9 +359,9 @@ const styles = StyleSheet.create({
   },
   additionalInfo: {
     marginTop: 20,
-    flex:1,
-    flexDirection:'row',
-    justifyContent:'space-between',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
 

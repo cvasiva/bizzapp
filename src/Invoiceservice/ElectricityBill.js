@@ -100,13 +100,15 @@ const ElectricityBill = ({invoice_data}) => {
                     <View style={styles.billingDetailsColumn}>
                       <Text style={styles.accountDetailsText}>
                         Bill Period:
+                        <Text style={styles.accountDetailsText}>
+                          {moment(invoice.invoice_date, 'DD-MM-YYYY')
+                            .subtract(30, 'days')
+                            .format('DD-MM-YYYY')}
+                        </Text>
+                        <Text style={styles.accountDetailsText}>to</Text>
                       </Text>
-                      <Text style={styles.accountDetailsText}>
-                        {moment(invoice.invoice_date, 'DD-MM-YYYY')
-                          .subtract(30, 'days')
-                          .format('DD-MM-YYYY')}
-                      </Text>
-                      <Text style={styles.accountDetailsText}>to</Text>
+                      <Text style={styles.accountDetailsText}>Rdng Date</Text>
+                      <Text style={styles.accountDetailsText}>Bill no.</Text>
                     </View>
                     <View
                       style={[styles.billingDetailsColumn, styles.textRight]}>
@@ -196,16 +198,11 @@ const ElectricityBill = ({invoice_data}) => {
                     <View
                       style={[styles.billingDetailsColumn, styles.textRight]}>
                       <Text style={styles.accountDetailsText}>
-                        {pres || 'N/A'}
+                        {pres || 'N/A'}{','} {pres_deg || 'N/A'}
                       </Text>
+
                       <Text style={styles.accountDetailsText}>
-                        {pres_deg || 'N/A'}
-                      </Text>
-                      <Text style={styles.accountDetailsText}>
-                        {pres || 'N/A'}
-                      </Text>
-                      <Text style={styles.accountDetailsText}>
-                        {pres_deg || 'N/A'}
+                        {pres || 'N/A'} , {pres_deg || 'N/A'}
                       </Text>
                     </View>
                   </View>
@@ -261,8 +258,8 @@ const ElectricityBill = ({invoice_data}) => {
 };
 
 const styles = StyleSheet.create({
-  additionalCardHeaderText:{
-    color:'#808080',
+  additionalCardHeaderText: {
+    color: '#808080',
   },
   container: {
     flex: 1,

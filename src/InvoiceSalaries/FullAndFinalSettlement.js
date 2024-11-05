@@ -27,14 +27,11 @@ const FullAndFinalSettlement = ({invoice_data}) => {
         <View>
           <View style={styles.header}>
             <View style={styles.logoContainer}>
-              {usercompany.logo && (
-                <Image
-                  source={{
-                    uri: `https://skillcdn.storage.googleapis.com/${usercompany.logo}`,
-                  }}
-                  style={styles.logo}
-                />
-              )}
+              <Image
+                source={require('../Images/nisha_steel_n_alloys.png')}
+                resizeMode="contain"
+                style={styles.logo}
+              />
             </View>
             <View style={styles.companyDetails}>
               <Text style={styles.companyName}>
@@ -62,87 +59,99 @@ const FullAndFinalSettlement = ({invoice_data}) => {
           <View style={styles.detailsContainer}>
             <View style={styles.detailsSection}>
               <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Emp Name:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.employee_name}
-                </Text>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Emp Name:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.employee_name}
+                  </Text>
+                </View>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Date of Joining:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.date_of_joining}
+                  </Text>
+                </View>
               </View>
               <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Department:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.department}
-                </Text>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Department:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.department}
+                  </Text>
+                </View>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Resignation Date:</Text>
+                  <Text style={styles.detailsValue}>
+                    {moment(
+                      employee_salary.resignation_date,
+                      'DD-MM-YYYY',
+                    ).format('DD/MM/YYYY')}
+                  </Text>
+                </View>
               </View>
               <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>PAN No:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.pan || '-'}
-                </Text>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>PAN No:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.pan || '-'}
+                  </Text>
+                </View>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Relieving Date:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.resignation_date}
+                  </Text>
+                </View>
               </View>
               <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>UAN NO:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.uan || '-'}
-                </Text>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>UAN NO:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.uan || '-'}
+                  </Text>
+                </View>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Notice Pay Days:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.notice_pay_days || '-'}
+                  </Text>
+                </View>
               </View>
               <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Designation:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.designation || '-'}
-                </Text>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Designation:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.designation || '-'}
+                  </Text>
+                </View>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Settlement Date:</Text>
+                  <Text style={styles.detailsValue}>
+                    {moment(
+                      employee_salary.resignation_date,
+                      'DD-MM-YYYY',
+                    ).format('DD/MM/YYYY')}
+                  </Text>
+                </View>
               </View>
+
               <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Resignation Date:</Text>
-                <Text style={styles.detailsValue}>
-                  {moment(
-                    employee_salary.resignation_date,
-                    'DD-MM-YYYY',
-                  ).format('DD/MM/YYYY')}
-                </Text>
-              </View>
-              <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Date of Joining:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.date_of_joining}
-                </Text>
-              </View>
-              <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Relieving Date:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.resignation_date}
-                </Text>
-              </View>
-              <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Years of Service:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.years_service || '-'}
-                </Text>
-              </View>
-              <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Notice Pay Days:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.notice_pay_days || '-'}
-                </Text>
-              </View>
-              <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>Settlement Date:</Text>
-                <Text style={styles.detailsValue}>
-                  {moment(
-                    employee_salary.resignation_date,
-                    'DD-MM-YYYY',
-                  ).format('DD/MM/YYYY')}
-                </Text>
-              </View>
-              <View style={styles.detailsRow}>
-                <Text style={styles.detailsLabel}>EL Balance *:</Text>
-                <Text style={styles.detailsValue}>
-                  {employee_salary.el_balance || '-'}
-                </Text>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>Years of Service:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.years_service || '-'}
+                  </Text>
+                </View>
+                <View style={styles.flxepm}>
+                  <Text style={styles.detailsLabel}>EL Balance *:</Text>
+                  <Text style={styles.detailsValue}>
+                    {employee_salary.el_balance || '-'}
+                  </Text>
+                </View>
               </View>
             </View>
 
             <View style={styles.tableContainer}>
-              {/* Table Header */}
               <View style={styles.tableHeader}>
                 <View style={[styles.tableCell, styles.headerCell]}>
                   <Text style={styles.headerText}>Salary Structure</Text>
@@ -408,6 +417,11 @@ const FullAndFinalSettlement = ({invoice_data}) => {
 };
 
 const styles = StyleSheet.create({
+  flxepm: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '50%',
+  },
   tableHeader: {
     flexDirection: 'row',
     backgroundColor: '#f2f2f2',
@@ -423,16 +437,16 @@ const styles = StyleSheet.create({
   },
   headerCell: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   headerText: {
     textAlign: 'center',
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   cellText: {
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   //   tableRow: {
   //     flexDirection: 'row',
@@ -466,14 +480,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   companyAddress: {
-    color:'#fff',
+    color: '#fff',
     fontSize: 12,
   },
   refDetails: {
     marginLeft: 10,
   },
   refText: {
-    color:'#fff',
+    color: '#fff',
     fontSize: 12,
   },
   statementHeader: {
@@ -484,8 +498,8 @@ const styles = StyleSheet.create({
   statementTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color:'#808080',
-    textAlign:'center',
+    color: '#808080',
+    textAlign: 'center',
   },
   detailsContainer: {
     padding: 10,
@@ -494,21 +508,23 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   detailsRow: {
+    display: 'flex',
     flexDirection: 'row',
-    // justifyContent: 'space-between',
+    justifyContent: 'space-around',
     paddingVertical: 5,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+    width: '100%',
   },
   detailsLabel: {
     fontWeight: 'bold',
-    color:'#808080',
-    paddingRight:20,
+    color: '#808080',
+    paddingRight: 20,
   },
   detailsValue: {
     flex: 1,
     textAlign: 'start',
-    color:'#808080',
+    color: '#808080',
   },
   tableContainer: {
     borderTopWidth: 1,

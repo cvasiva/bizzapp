@@ -91,10 +91,14 @@ const DetailSalaryStatement = ({invoice_data}) => {
             {company_data.companyname ? company_data.companyname : ''}
           </Text>
           {company_data && (
-            <Text style={styles.labelfont}>
-              {company_data.address1} {company_data.address2}{' '}
-              {company_data.city} {company_data.pin}, {company_data.state}
-            </Text>
+            <>
+              <Text style={styles.labelfont}>
+                {company_data.address1} {company_data.address2}{' '}
+              </Text>
+              <Text>
+                {company_data.city} {company_data.pin}, {company_data.state}
+              </Text>
+            </>
           )}
         </View>
         <View style={styles.details}>
@@ -238,9 +242,9 @@ const DetailSalaryStatement = ({invoice_data}) => {
 };
 
 const styles = StyleSheet.create({
-  detailRow:{
-    display:'flex',
-    flexDirection:'row',
+  detailRow: {
+    display: 'flex',
+    flexDirection: 'row',
   },
   labelfont: {
     color: '#808080',
@@ -248,7 +252,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    width:600,
+    width: 600,
   },
   headerRow: {
     flexDirection: 'row',
@@ -264,7 +268,7 @@ const styles = StyleSheet.create({
   },
   bold: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   centered: {
     textAlign: 'center',
@@ -278,7 +282,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    color:'#808080',
+    color: '#808080',
     fontWeight: 'bold',
   },
   section: {
@@ -287,18 +291,23 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontWeight: 'bold',
     marginBottom: 5,
-    color:'#808080',
+    color: '#808080',
   },
   tableHeader: {
     flexDirection: 'row',
     backgroundColor: '#BEB7F4',
     paddingVertical: 5,
     paddingHorizontal: 10,
+    justifyContent: 'center',
+    textAlign: 'center',
+    gap: 10,
   },
   cellHeader: {
     flex: 1,
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
+    fontSize: 12,
+    textAlign: 'center',
   },
   row: {
     flexDirection: 'row',
@@ -307,7 +316,7 @@ const styles = StyleSheet.create({
   },
   cell: {
     flex: 1,
-    color:'#808080',
+    color: '#808080',
   },
 });
 

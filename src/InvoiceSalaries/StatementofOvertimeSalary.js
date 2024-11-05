@@ -49,14 +49,11 @@ const StatementofOvertimeSalary = ({invoice_data}) => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.companyInfo}>
-        {company_data.logo && (
-          <Image
-            source={{
-              uri: `https://skillcdn.storage.googleapis.com/${company_data.logo}`,
-            }}
-            style={styles.logo}
-          />
-        )}
+        <Image
+          source={require('../Images/nisha_steel_n_alloys.png')}
+          resizeMode="contain"
+          style={styles.logo}
+        />
         <View style={styles.companyDetails}>
           <Text style={styles.companyName}>{company_data.companyname}</Text>
           <Text style={styles.labelfont}>
@@ -205,7 +202,7 @@ const styles = StyleSheet.create({
   tableText12: {
     textAlign: 'center',
     color: '#808080',
-    fontWeight:'bold',
+    fontWeight: 'bold',
   },
 });
 

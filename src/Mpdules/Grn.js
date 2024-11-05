@@ -45,32 +45,60 @@ const Grn = ({invoice_data}) => {
           <View style={[styles.row, styles.centerText]}>
             <Text style={styles.headerText}>GOODS RECEIPT NOTE</Text>
           </View>
-          <View style={[styles.row, styles.border]}>
-            <View style={styles.flex6}>
-              <Text style={styles.bold}>Bill To:</Text>
+          <View style={[styles.section, styles.margin]}>
+            <View style={styles.sectionLeft}>
+              <Text style={styles.boldText}>Bill To:</Text>
               <Text
                 style={
                   styles.textcolore
                 }>{`${invoice.company.companyname} ${invoice.company.address_1} ${invoice.company.city} ${invoice.company.pin_code}, ${invoice.company.state}`}</Text>
             </View>
-            {/* <View
-              style={[styles.flex1, styles.borderDark, styles.bgDark]}></View> */}
-            <View style={styles.flex5}>
-              <View style={styles.row}>
-                <View style={styles.flex5}>
-                  <Text style={styles.bold}>GRN No.</Text>
-                  <Text style={styles.bold}>GRN Date</Text>
-                  <Text style={styles.bold}>PO No</Text>
-                  <Text style={styles.bold}>Invoice No.</Text>
-                  <Text style={styles.bold}>Invoice Date</Text>
-                </View>
-                <View style={styles.flex7}>
-                  <Text style={styles.textcolore}>{random()}</Text>
-                  <Text style={styles.textcolore}>{invoice.invoice_date}</Text>
-                  <Text style={styles.textcolore}>{po.po_no}</Text>
-                  <Text style={styles.textcolore}>{invoice.invoice_no}</Text>
-                  <Text style={styles.textcolore}>{invoice.invoice_date}</Text>
-                </View>
+            <View style={styles.sectionRight}>
+              <View style={styles.detailRow}>
+                <Text style={[styles.invoiceFont, styles.boldText]}>
+                  GRN No.
+                </Text>
+                <Text style={[styles.invoiceFont, styles.detailText]}>
+                  : {random()}
+                </Text>
+              </View>
+              <View style={styles.detailRow}>
+                <Text style={[styles.invoiceFont, styles.boldText]}>
+                  GRN Date
+                </Text>
+                <Text style={[styles.invoiceFont, styles.detailText]}>
+                  : {invoice.invoice_date || ''}
+                </Text>
+              </View>
+              {/* <View style={styles.detailRow}>
+                <Text style={[styles.invoiceFont, styles.boldText]}>PAN</Text>
+                <Text style={[styles.invoiceFont, styles.detailText]}>
+                  : {invoice.bill_to?.pan || ''}
+                </Text>
+              </View> */}
+              <View style={styles.detailRow}>
+                <Text style={[styles.invoiceFont, styles.boldText]}>
+                  PO No.
+                </Text>
+                <Text style={[styles.invoiceFont, styles.detailText]}>
+                  : {po.po_no || ''}
+                </Text>
+              </View>
+              <View style={styles.detailRow}>
+                <Text style={[styles.invoiceFont, styles.boldText]}>
+                  Invoice No.
+                </Text>
+                <Text style={[styles.invoiceFont, styles.detailText]}>
+                  : {invoice.invoice_no || ''}
+                </Text>
+              </View>
+              <View style={styles.detailRow}>
+                <Text style={[styles.invoiceFont, styles.boldText]}>
+                  Invoice Date
+                </Text>
+                <Text style={[styles.invoiceFont, styles.detailText]}>
+                  : {invoice.invoice_date || ''}
+                </Text>
               </View>
             </View>
           </View>
@@ -129,7 +157,7 @@ const Grn = ({invoice_data}) => {
           ))}
 
           <View style={styles.row}>
-            <View style={styles.flex7}></View>
+            <View style={styles.flex8}></View>
             {invoice.sgst_total > 0 && invoice.cgst_total > 0 && (
               <>
                 <View style={[styles.flex2, styles.bold, styles.centerText]}>
@@ -153,7 +181,7 @@ const Grn = ({invoice_data}) => {
                     {new Intl.NumberFormat('en-IN').format(invoice.sgst_total)}
                   </Text>
                 </View>
-                <View style={styles.flex1}></View>
+                {/* <View style={styles.flex1}></View> */}
               </>
             )}
             {invoice.igst_total > 0 && (
@@ -177,7 +205,7 @@ const Grn = ({invoice_data}) => {
           </View>
 
           <View style={styles.row}>
-            <View style={styles.flex7}></View>
+            <View style={styles.flex8}></View>
             <View style={[styles.flex2, styles.centerText, styles.bold]}>
               <Text style={styles.textcolore}>TOTAL</Text>
             </View>
@@ -189,7 +217,7 @@ const Grn = ({invoice_data}) => {
                   : new Intl.NumberFormat('en-IN').format(po.total)}
               </Text>
             </View>
-            <View style={styles.flex1}></View>
+            {/* <View style={styles.flex1}></View> */}
           </View>
 
           <View style={styles.row}>
@@ -279,6 +307,10 @@ const styles = StyleSheet.create({
   textcolore: {
     color: '#000',
   },
+  invoiceFont: {
+    fontSize: 14,
+    color: '#000',
+  },
   textcolorewhit: {
     color: '#fff',
     fontWeight: '600',
@@ -287,6 +319,38 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     height: '100%',
     width: 600,
+  },
+  boldText: {
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  section: {
+    flexDirection: 'row',
+    marginBottom: 10,
+    color: '#000',
+  },
+  sectionLeft: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'gray',
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+  },
+  sectionRight: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'gray',
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    marginLeft: 2,
+  },
+  detailRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  detailText: {
+    marginLeft: 10,
+    color: '#000',
   },
   startSection: {
     justifyContent: 'flex-start',

@@ -105,7 +105,7 @@ const typesbutton = [
     buttons: ['BILL', 'PO', 'GRN'],
   },
   {
-    type: 'rental',
+    type: 'rental_machinery',
     buttons: ['BILL', 'PO', 'GRN'],
   },
   {

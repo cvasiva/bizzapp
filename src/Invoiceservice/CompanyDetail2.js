@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
 const CompanyDetail2 = ({company}) => {
   // const trimmedLogoUrl = company?.logo;
@@ -8,12 +8,11 @@ const CompanyDetail2 = ({company}) => {
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
-        {/* {trimmedLogoUrl && (
-          <Image
-            source={{ uri: trimmedLogoUrl }}
-            style={styles.logo}
-          />
-        )} */}
+        <Image
+          source={require('../Images/nisha_steel_n_alloys.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
       </View>
       <View style={styles.detailsContainer}>
         <Text style={[styles.companyName]}>
@@ -25,9 +24,7 @@ const CompanyDetail2 = ({company}) => {
             {company.pin_code}, {company.state}
           </Text>
         ) : (
-          <Text style={styles.address}>
-            Address Unavailable
-          </Text>
+          <Text style={styles.address}>Address Unavailable</Text>
         )}
       </View>
     </View>
@@ -46,6 +43,9 @@ const styles = StyleSheet.create({
   },
   logo: {
     resizeMode: 'contain',
+    height:50,
+    width:50,
+    margin:10,
   },
   detailsContainer: {
     flex: 2,

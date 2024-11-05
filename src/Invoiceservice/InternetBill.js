@@ -37,9 +37,8 @@ const InternetBill = ({invoice_data}) => {
           <View style={styles.logoContainer}>
             {invoice.company.logo && (
               <Image
-                source={{
-                  uri: `https://skillcdn.storage.googleapis.com/${invoice.company.logo.trim()}`,
-                }}
+                source={require('../Images/nisha_steel_n_alloys.png')}
+                resizeMode="contain"
                 style={styles.logo}
               />
             )}
@@ -208,9 +207,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 100,
-    // height: 50,
+    width: 50,
+    height: 50,
     resizeMode: 'contain',
+    margin:10,
   },
   title: {
     fontSize: 23,
@@ -247,11 +247,11 @@ const styles = StyleSheet.create({
   },
   summaryTitle: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   summaryText: {
     fontSize: 12,
-    color:'#808080',
+    color: '#808080',
   },
   chargesTitle: {
     fontSize: 16,
@@ -272,7 +272,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontWeight: 'bold',
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   tableRow: {
     flexDirection: 'row',
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
   tableCell: {
     flex: 1,
     textAlign: 'center',
-    color:'#808080',
+    color: '#808080',
   },
   tableFooter: {
     borderTopWidth: 1,
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
   tableFooterCell: {
     flex: 1,
     textAlign: 'right',
-    color:'#808080',
+    color: '#808080',
   },
 });
 

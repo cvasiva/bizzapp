@@ -18,13 +18,17 @@ export const getUser = async () => {
 };
 
 // Function to get the current user, ensuring the user has a token
+// export const getCurrentUser = async () => {
+//   const user = await getUser();
+//   if (user && user.token) {
+//     return user;
+//   } else {
+//     throw new Error('User token not found');
+//   }
+// };
 export const getCurrentUser = async () => {
-  const user = await getUser();
-  if (user && user.token) {
-    return user;
-  } else {
-    throw new Error('User token not found');
-  }
+  const user = await getUser(); // Await the user retrieval
+  return user.token ? user : null; // Return the user if token exists, otherwise null
 };
 
 // Function to log out and clear user data
@@ -56,6 +60,15 @@ export const setInvoiceData = async (data) => {
     console.log('Payroll data saved successfully.');
   } catch (error) {
     console.error('Error saving payroll data:', error);
+  }
+};
+
+export const setAccountData = async (data) => {
+  try {
+    await AsyncStorage.setItem('categories', JSON.stringify(data));
+    console.log('Account data saved successfully');
+  } catch (error) {
+    console.error('Error saving account data:', error);
   }
 };
 

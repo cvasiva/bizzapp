@@ -28,6 +28,7 @@ const AccountingDash = ({
   // const [progressData, setProgressData] = useState(null);
   const scrollViewRef = useRef(null);
   const currentCategory = progressData.categories[step];
+
   const handleScroll = event => {
     const offsetX = event.nativeEvent.contentOffset.x;
     const index = Math.round(offsetX / slideWidth);
@@ -66,6 +67,7 @@ const AccountingDash = ({
   const handleSubmit = () => {
     // navigation.navigate('processing');
     setPage(1);
+    // console.log('currentCategory', progressData);
   };
   const renderItem = (item, index) => {
     const backgroundColor = bgcolor[index % bgcolor.length];

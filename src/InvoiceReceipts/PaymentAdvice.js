@@ -44,16 +44,14 @@ const PaymentAdvice = ({invoice_data}) => {
 
   const renderReceiptInfo = () => {
     const {company} = invoice_data;
-    const trimmedLogoUrl = company?.logo?.trim() || '';
 
     return (
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.logoSection}>
             <Image
-              source={{
-                uri: `https://skillcdn.storage.googleapis.com/${trimmedLogoUrl}`,
-              }}
+              source={require('../Images/nisha_steel_n_alloys.png')}
+              resizeMode="contain"
               style={styles.logo}
             />
             <View style={styles.companyInfo}>
@@ -79,12 +77,16 @@ const PaymentAdvice = ({invoice_data}) => {
             {paymentAdvice.payment_advice_heading}
           </Text>
           <Text style={styles.address}>{invoice_data.supplier.address_2}</Text>
-          <Text style={styles.fontcolor}>Date: {invoice_data.reciept_date}</Text>
+          <Text style={styles.fontcolor}>
+            Date: {invoice_data.reciept_date}
+          </Text>
         </View>
 
         <View style={styles.content}>
           <Text style={styles.fontcolor}>Dear Sir/Madam,</Text>
-          <Text style={styles.fontcolor}>Please find below the payment details.</Text>
+          <Text style={styles.fontcolor}>
+            Please find below the payment details.
+          </Text>
         </View>
 
         <ScrollView horizontal={true}>
@@ -139,7 +141,7 @@ const PaymentAdvice = ({invoice_data}) => {
                     <Text style={styles.tableData}>
                       {payment.mode_of_payment}
                     </Text>
-                    <Text style={styles.tableData} >{'-'}</Text>
+                    <Text style={styles.tableData}>{'-'}</Text>
                     <Text style={styles.tableData}>
                       {payment.instrument_date}
                     </Text>
@@ -203,8 +205,8 @@ const PaymentAdvice = ({invoice_data}) => {
 };
 
 const styles = StyleSheet.create({
-  fontcolor:{
-    color:'#808080',
+  fontcolor: {
+    color: '#808080',
   },
   textEnd: {
     textAlign: 'right',
@@ -281,7 +283,7 @@ const styles = StyleSheet.create({
   tableHeader: {
     flexDirection: 'row',
     backgroundColor: 'darkblue',
-    width:600,
+    width: 600,
   },
   tableHeaderText: {
     flex: 1,
@@ -296,8 +298,8 @@ const styles = StyleSheet.create({
   },
   tableData: {
     flex: 1,
-    color:'#808080',
-    textAlign:'center',
+    color: '#808080',
+    textAlign: 'center',
   },
   signatureSection: {
     flexDirection: 'row',

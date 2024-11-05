@@ -1,6 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  FlatList,
+  Image,
+} from 'react-native';
 
 const ProvidentFund = ({invoice_data}) => {
   const pf_payment = invoice_data?.pf_payment || {};
@@ -22,7 +29,13 @@ const ProvidentFund = ({invoice_data}) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
-        {/* <Image source={emp} style={styles.logo} /> */}
+        <View>
+          <Image
+            source={require('../Images/emp.png')}
+            resizeMode="contain"
+            style={styles.logo}
+          />
+        </View>
         <View style={styles.headerTextContainer}>
           <Text style={styles.headerText}>
             COMBINED CHALLAN OF A/C NO. 01, 02, 10, 21 & 22
@@ -108,17 +121,23 @@ const ProvidentFund = ({invoice_data}) => {
             <Text style={styles.headerCell}>ABRY</Text>
           </View>
           <View style={styles.tableRow}>
-            <Text style={styles.rightAligned}>A) A/C no 1 (Employee share) (Rs.)-</Text>
+            <Text style={styles.rightAligned}>
+              A) A/C no 1 (Employee share) (Rs.)-
+            </Text>
             <Text style={styles.rightAligned}>{fund.pmrpy.pmrpy_acc1}</Text>
             <Text style={styles.rightAligned}>{fund.abry.abry_acc1}</Text>
           </View>
           <View style={styles.tableRow}>
-            <Text style={styles.rightAligned}>B) A/C no 10 (Pension fund) (Rs.)-</Text>
+            <Text style={styles.rightAligned}>
+              B) A/C no 10 (Pension fund) (Rs.)-
+            </Text>
             <Text style={styles.rightAligned}>{fund.pmrpy.pmrpy_acc2}</Text>
             <Text style={styles.rightAligned}>{fund.abry.abry_acc2}</Text>
           </View>
           <View style={styles.tableRow}>
-            <Text style={styles.rightAligned}>C) A/C no 1 (Employee share) (Rs.)-</Text>
+            <Text style={styles.rightAligned}>
+              C) A/C no 1 (Employee share) (Rs.)-
+            </Text>
             <Text style={styles.rightAligned}>{fund.pmrpy.pmrpy_acc3}</Text>
             <Text style={styles.rightAligned}>{fund.abry.abry_acc3}</Text>
           </View>
@@ -128,12 +147,16 @@ const ProvidentFund = ({invoice_data}) => {
             <Text style={styles.rightAligned}>{fund.abry.abry_acc4}</Text>
           </View>
           <View style={styles.tableRow}>
-            <Text style={styles.rightAligned}>E) Total remittance by Employee (Rs.)-</Text>
+            <Text style={styles.rightAligned}>
+              E) Total remittance by Employee (Rs.)-
+            </Text>
             <Text style={styles.rightAligned}>{fund.pmrpy.pmrpy_acc5}</Text>
             <Text style={styles.rightAligned}>0</Text>
           </View>
           <View style={styles.tableRow}>
-            <Text style={styles.rightAligned}>F) Total amount of uploaded ECR (D + E)</Text>
+            <Text style={styles.rightAligned}>
+              F) Total amount of uploaded ECR (D + E)
+            </Text>
             <Text style={styles.rightAligned}>{fund.pmrpy.pmrpy_acc6}</Text>
             <Text style={styles.rightAligned}>0</Text>
           </View>
@@ -144,55 +167,56 @@ const ProvidentFund = ({invoice_data}) => {
 };
 
 const styles = StyleSheet.create({
-  rightAligned:{
-    color:'#808080',
+  rightAligned: {
+    color: '#808080',
   },
   container: {
     flexGrow: 1,
     padding: 16,
     backgroundColor: '#fff',
-    width:600,
-    color:'#808080',
+    width: 600,
+    color: '#808080',
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
-    color:'#808080',
+    color: '#808080',
   },
   logo: {
-    width: 80,
-    height: 70,
-    color:'#808080',
+    width: 50,
+    height: 50,
+    color: '#808080',
+    margin: 10,
   },
   headerTextContainer: {
     flex: 1,
     justifyContent: 'center',
-    marginLeft: -32,
-    color:'#808080',
+    // marginLeft: -32,
+    color: '#808080',
   },
   headerText: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   trrn: {
     textAlign: 'right',
-    color:'#808080',
+    color: '#808080',
   },
   infoContainer: {
     marginBottom: 20,
-    color:'#808080',
+    color: '#808080',
   },
   infoRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 4,
-    color:'#808080',
+    color: '#808080',
   },
   address: {
     marginVertical: 8,
-    color:'#808080',
+    color: '#808080',
   },
   table: {
     borderWidth: 1,
@@ -200,7 +224,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     overflow: 'hidden',
     marginBottom: 20,
-    color:'#808080',
+    color: '#808080',
   },
   tableRow: {
     flexDirection: 'row',
@@ -208,41 +232,41 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ddd',
     paddingVertical: 8,
     paddingHorizontal: 4,
-    color:'#808080',
+    color: '#808080',
   },
   tableHeaderCell: {
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   headerCell: {
     textAlign: 'center',
     fontWeight: 'bold',
-    color:'#808080',
+    color: '#808080',
   },
   cell: {
     flex: 1,
     textAlign: 'right',
-    color:'#808080',
+    color: '#808080',
   },
   tableHeader: {
     borderTopWidth: 1,
     borderTopColor: '#000',
-    color:'#808080',
+    color: '#808080',
   },
   tableFooter: {
     borderTopWidth: 1,
     borderTopColor: '#000',
     borderBottomWidth: 1,
     borderBottomColor: '#000',
-    color:'#808080',
+    color: '#808080',
   },
   footerText: {
     flex: 1,
-    color:'#808080',
+    color: '#808080',
   },
   note: {
     marginBottom: 10,
-    color:'#808080',
+    color: '#808080',
   },
 });
 

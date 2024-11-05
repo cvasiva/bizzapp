@@ -299,6 +299,8 @@ const styles = StyleSheet.create({
     flex: 1,
     fontWeight: 'bold',
     color:'#808080',
+    textAlign:'center',
+    fontSize:14,
   },
   row: {
     flexDirection: 'row',
