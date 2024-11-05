@@ -17,7 +17,7 @@ const Accountingflow = ({navigation}) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [items, setItems] = useState([]);
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(0);
   const [subCategoryIndex, setSubCategoryIndex] = useState(0);
 
   useEffect(() => {
